@@ -1,0 +1,5 @@
+Es posible crear la base de datos de la aplicación desde database.jsp.
+Usuario: admin
+Contraseña: 12tres
+
+Codigo fuente: https://github.com/AlejandroClares/SpaceY

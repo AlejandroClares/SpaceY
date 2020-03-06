@@ -7,22 +7,37 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Permite realizar consultas a la tabla estadisticas
+ * 
+ * @author Alejandro
+ */
 public class Estadisticadb extends Conexiondb {
 
 	private Connection conexion;
 	private Statement st;
 	
+	/**
+	 * Pone los datos a un valor por defecto.
+	 * 
+	 * @author Alejandro
+	 */
 	public Estadisticadb() {
 		this.conexion = super.conexion;
 		this.st = super.st;
 	}
 	
 	/**
-	 * Inserta los datos
+	 * Inserta una fila en la tabla.
 	 * 
-	 * Devuelve true o false 
+	 * <pre>
+	 * 		Estadisticadb db = new Estadisticadb();
+	 * 		boolean realizado = insertar(data);
+	 * </pre>
 	 * 
-	 * */
+	 * @param data ArrayList con los datos de Estadistica.
+	 * @return Verdadero o falso si la consulta se hizo correctamente.
+	 */
 	public boolean insertar(ArrayList data) {
 		boolean exito;
 		
@@ -44,9 +59,16 @@ public class Estadisticadb extends Conexiondb {
 	}
 	
 	/**
-	 * Devuelve una lista de estadistica de los jugadores que participaron en esa partida
+	 * Devuelve una lista de estadistica de los jugadores que participaron en esa partida.
 	 * 
-	 * */
+	 * <pre>
+	 * 		Estadisticadb db = new Estadisticadb();
+	 * 		ArrayList&lt;EstadisticaData&gt; data = obtenerJugadoresPartida("15");
+	 * </pre>
+	 * 
+	 * @param id Identificador de la partida.
+	 * @return ArrayList con objetos de EstadisticaData.
+	 */
 	public ArrayList<EstadisticaData> obtenerJugadoresPartida(String id) {
 		
 		ArrayList<EstadisticaData> datos = new ArrayList<EstadisticaData>();

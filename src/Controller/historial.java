@@ -14,7 +14,7 @@ import Modelo.PartidaData;
 import Modelo.Partidadb;
 
 /**
- * Servlet implementation class historial
+ * Muestra el historial de partidas.
  */
 @WebServlet("/historial")
 public class historial extends HttpServlet {
@@ -29,6 +29,9 @@ public class historial extends HttpServlet {
     }
 
 	/**
+	 * Recupera los datos de una partida para enviarlos a una vista.
+	 * 
+	 * @author Alejandro
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

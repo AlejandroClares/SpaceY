@@ -1,10 +1,21 @@
 package Juego;
 
+/**
+ * Procesa la batalla
+ * 
+ * @author Alejandro
+ */
 public class Batalla {
 
 	private Jugador[] jugadores;
 	private String ganador;
 	
+	/**
+	 * Asigna los jugadores a la batalla.
+	 * 
+	 * @author Alejandro
+	 * @param jugadores Array de jugadores
+	 */
 	public Batalla(Jugador[] jugadores) {
 		this.jugadores = jugadores;
 	}
@@ -13,6 +24,11 @@ public class Batalla {
 		return ganador;
 	}
 
+	/**
+	 * Ambos jugadores combaten hasta que sale un vencedor.
+	 * 
+	 * @author Alejandro
+	 */
 	public void combateCompleto() {
 		
 		while(!terminaCombate()) {
@@ -29,6 +45,12 @@ public class Batalla {
 		ganador = ganador();
 	}
 	
+	/**
+	 * Comprueba si el combate a terminado.
+	 * 
+	 * @author Alejandro
+	 * @return Verdadero o false si termino el combate.
+	 */
 	private boolean terminaCombate() {
 		
 		boolean fin_combate = false;
@@ -40,6 +62,12 @@ public class Batalla {
 		
 	}
 
+	/**
+	 * Comprueba quien gano la partida.
+	 * 
+	 * @author Alejandro
+	 * @return Nombre del ganador
+	 */
 	private String ganador() {
 		
 		String ganador;

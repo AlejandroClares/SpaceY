@@ -20,7 +20,7 @@ import Modelo.Partidadb;
 import Modelo.Tools;
 
 /**
- * Servlet implementation class Jugar
+ * Procesa los datos de una partida y los guarda en la base de datos.
  */
 @WebServlet("/Jugar")
 public class Jugar extends HttpServlet {
@@ -35,7 +35,13 @@ public class Jugar extends HttpServlet {
     }
 
 	/**
+	 * Comprueba que los valores introducidos sean validos y ejecuta el juego.
+	 * Ademas, guarda la partida y las estadisticas generadas en la base de datos
+	 * 
+	 * @author Alejandro
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see Modelo.EstadisticaData
+	 * @see Modelo.PartidaData
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -136,8 +142,8 @@ public class Jugar extends HttpServlet {
 					Calendar c = new GregorianCalendar();
 					
 					String dia = tl.parseTime(Integer.toString(c.get(Calendar.DATE)));
-					String mes = tl.parseTime(Integer.toString(c.get(Calendar.MONTH)));
-					String annio = Integer.toString(c.get(Calendar.YEAR));
+					String mes = tl.parseTime(Integer.toString(c.get(Calendar.MONTH)+1));// se suma 1 ya que enero es el mes 0
+					String annio = Integer.toString(c.get(Calendar.YEAR)); 
 					String hora = tl.parseTime(Integer.toString(c.get(Calendar.HOUR_OF_DAY)));
 					String minuto = tl.parseTime(Integer.toString(c.get(Calendar.MINUTE)));
 					String segundo = tl.parseTime(Integer.toString(c.get(Calendar.SECOND)));

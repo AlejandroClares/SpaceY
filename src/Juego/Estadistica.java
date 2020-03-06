@@ -5,6 +5,11 @@ import Naves.Linea;
 import Naves.Nave;
 import Naves.Viper;
 
+/**
+ * Se almacena toda la estadistica generada por un jugador.
+ * 
+ * @author Alejandro
+ */
 public class Estadistica {
 
 	
@@ -24,7 +29,11 @@ public class Estadistica {
 	private long disparos_acertados;
 	private long cantidad_disparos;
 
-	
+	/**
+	 * Calcula el poder de cada nave para inicializar sus variables.
+	 * 
+	 * @author Alejandro
+	 */
 	public Estadistica() {
 		this.PODERVIPER = calculaPoderNave(new Viper(null, null));
 		this.PODERESCOLTA = calculaPoderNave(new Escolta(null, null));
@@ -112,6 +121,13 @@ public class Estadistica {
 	}
 
 //	Calcula la puntuacion de poder de la nave.
+	/**
+	 * Calcula el poder militar de la nave.
+	 * 
+	 * @author Alejandro
+	 * @param nave Objeto de una nave.
+	 * @return Cantidad de poder de esa nave.
+	 */
 	private int calculaPoderNave(Nave nave) {
 		
 		int poder = nave.getVida(); //Poder de la vida.
@@ -125,7 +141,13 @@ public class Estadistica {
 		
 	}
 
-//	Calcula el poder total del tipo de nave y cantidad de naves indicada.
+	/**
+	 * Calcula el poder total del tipo de nave y cantidad de naves indicada.
+	 * 
+	 * @param tipo_nave Nombre de la nave
+	 * @param cantidad Cantidad de naves
+	 * @return Poder militar total de las naves.
+	 */
 	private long calculaPoder(String tipo_nave, int cantidad) {
 		
 		long poder = 0;

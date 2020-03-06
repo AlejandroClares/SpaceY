@@ -3,10 +3,18 @@ package Naves;
 import Juego.Estadistica;
 import Juego.Jugador;
 
+/**
+ * Nave de tipo linea.
+ * 
+ * @author Alejandro
+ */
 public class Linea implements Nave {
 	
+	/*
+	 * Naves de gran tamaño que estan al frente del combate.
+	 * Priorizan las escoltas para ayudar a los vipers a destruir las lineas enemigas.
+	 */
 	private Estadistica stats;
-	
 	private String nombre;
 	private int vida = 40000;
 	private int ataque = 520;
@@ -85,8 +93,13 @@ public class Linea implements Nave {
 		this.stats = stats;
 	}
 	
-	
-//	Recibe daño según los parámetros de la nave atacante.
+	/**
+	 * Calcula el daño recibido según los parámetros de la nave atacante.
+	 * 
+	 * @author Alejandro
+	 * @param atacante Nave que ataca este viper.
+	 * return Daño total recibido
+	 */
 	public int getDamage(Nave atacante) {
 		
 		int danyo_Atacante = 0;
@@ -124,7 +137,12 @@ public class Linea implements Nave {
 		return danyo_Atacante;
 	}
 	
-//	Atacará a una nave priorizando su preferida y dira si la nave enemigo fue destruida.
+	/**
+	 * Atacará a una nave priorizando su preferida y dira si la nave enemigo fue destruida.
+	 * 
+	 * @author Alejandro
+	 * @param jg Jugador que será atacado
+	 */
 	public void setDamage(Jugador jg) {
 		
 		Nave objetivo = (Nave) jg.target(objetivo_preferido);
@@ -140,7 +158,13 @@ public class Linea implements Nave {
 			}
 	}
 	
-//	Devuelve true si el objetivo al que esta atacando es destruido.
+	/**
+	 * Comprueba si a destruido la nave objetivo
+	 * 
+	 * @param objetivo Nave a la que a atacado
+	 * @return Verdadero o falso si a destruido al objetivo
+	 * @see Nave.Nave
+	 */
 	private boolean destruido(Nave objetivo) {
 		
 		boolean destruido = false;

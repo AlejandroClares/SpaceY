@@ -2,6 +2,11 @@ package Modelo;
 
 import java.util.ArrayList;
 
+/**
+ * Permite manejar los datos de la estadistica guardada en la base de datos.
+ * 
+ * @author Alejandro
+ */
 public class EstadisticaData {
 
 	public int id;
@@ -25,8 +30,9 @@ public class EstadisticaData {
 	
 	
 	/**
-	 * Inicializa los valores a -1
+	 * Inicializa los valores a -1.
 	 * 
+	 * @author Alejandro
 	 * */
 	public EstadisticaData() {
 		
@@ -39,9 +45,11 @@ public class EstadisticaData {
 	}
 
 	/**
-	 * Inicia los valores
+	 * Inicializa los valores.
 	 * 
-	 * */
+	 * @author Alejandro
+	 * @param data  ArrayList con los 18 campos de la tabla estadistica.
+	 */
 	public EstadisticaData(ArrayList data) {
 
 		id = (int) data.get(0);

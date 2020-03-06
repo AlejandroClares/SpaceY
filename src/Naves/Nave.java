@@ -3,6 +3,11 @@ package Naves;
 import Juego.Estadistica;
 import Juego.Jugador;
 
+/**
+ * Atributos y funciones de una nave basica.
+ * 
+ * @author Alejandro
+ */
 public interface Nave {
 
 	int vida = 0;

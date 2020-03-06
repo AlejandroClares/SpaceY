@@ -3,14 +3,18 @@ package Naves;
 import Juego.Estadistica;
 import Juego.Jugador;
 
+/**
+ * Nave de tipo Escolta
+ * 
+ * @author Alejandro
+ */
 public class Escolta implements Nave {
 	
 	/*
-	 * La escolta se encarga de proteger naves grandes
+	 * La escolta se encarga de proteger naves Lineas
 	 * de los vipers.
 	 * */
 	private Estadistica stats;
-	
 	private String nombre;
 	private int vida = 3650;
 	private int ataque = 70;
@@ -99,7 +103,13 @@ public class Escolta implements Nave {
 		this.objetivo_preferido = objetivo_preferido;
 	}
 	
-	
+	/**
+	 * Calcula el daño recibido según los parámetros de la nave atacante.
+	 * 
+	 * @author Alejandro
+	 * @param atacante Nave que ataca este viper.
+	 * return Daño total recibido
+	 */
 	public int getDamage(Nave atacante) {
 		
 		int danyo_Atacante = 0;
@@ -137,6 +147,12 @@ public class Escolta implements Nave {
 		return danyo_Atacante;
 	}
 
+	/**
+	 * Atacará a una nave priorizando su preferida y dira si la nave enemigo fue destruida.
+	 * 
+	 * @author Alejandro
+	 * @param jg Jugador que será atacado
+	 */
 	public void setDamage(Jugador jg) {
 	
 		
@@ -154,6 +170,13 @@ public class Escolta implements Nave {
 		}
 	}
 	
+	/**
+	 * Comprueba si a destruido la nave objetivo
+	 * 
+	 * @param objetivo Nave a la que a atacado
+	 * @return Verdadero o falso si a destruido al objetivo
+	 * @see Nave.Nave
+	 */
 	private boolean destruido(Nave objetivo) {
 		
 		boolean destruido = false;

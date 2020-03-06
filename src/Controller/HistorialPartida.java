@@ -17,7 +17,7 @@ import Modelo.Partidadb;
 import Modelo.Tools;
 
 /**
- * Servlet implementation class HistorialPartida
+ * Muestra los datos de una partida.
  */
 @WebServlet("/HistorialPartida")
 public class HistorialPartida extends HttpServlet {
@@ -32,6 +32,9 @@ public class HistorialPartida extends HttpServlet {
     }
 
 	/**
+	 * Obtiene el id de una partida y recopila las estadisticas de esta para mostrarlas en una vista.
+	 * 
+	 * @author Alejandro
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -6,7 +6,11 @@ import Naves.Escolta;
 import Naves.Linea;
 import Naves.Viper;
 
-
+/**
+ * Contiene informacion sobre el jugador y sus naves
+ * 
+ * @author Alejandro
+ */
 public class Jugador {
 
 	private String nombre;
@@ -18,12 +22,18 @@ public class Jugador {
 	private ArrayList<Linea> lista_linea = new ArrayList<Linea>();
 	private ArrayList<String> tipo_nave_operativa = new ArrayList<String>();
 	
+	
+	/**
+	 * Asigna el nombre del jugador y crea un objeto estadistica.
+	 * 
+	 * @author Alejandro
+	 * @param nombre Nombre del jugador.
+	 */
 	public Jugador(String nombre) {
 		this.stats = new Estadistica();
 		this.nombre = nombre;
 	}
-	
-		
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -79,11 +89,22 @@ public class Jugador {
 		stats.setCantidadLineas(cantidad);	
 	}
 
+	/**
+	 * Cuenta el total de naves que le quedan al jugador.
+	 * 
+	 * @author Alejandro
+	 */
 	private void cuentaNaves() {
 		cantidad_naves = lista_viper.size() + lista_escolta.size() + lista_linea.size();
 	}
 	
-//	Selecciona una nave aleatoria del tipo de nave indicado seleccionado.
+	/**
+	 * Selecciona una nave aleatoria del tipo de nave indicado.
+	 * 
+	 * @author Alejandro
+	 * @param tipo_nave Nombre de la nave objetivo.
+	 * @return Nave que fue atacada.
+	 */
 	public Object target(String tipo_nave) {
 		
 		Object nave_objetivo = null;
@@ -112,7 +133,15 @@ public class Jugador {
 	return nave_objetivo;
 	}
 	
-//	Atacan las naves indicadas al jugador enemigo.
+
+	/**
+	 * Atacara al jugador "jg" con la nave que este en la posicion "atacante"
+	 * de su lista de naves.
+	 * 
+	 * @author Alejandro
+	 * @param jg Jugador que sera atacado
+	 * @param atacante Unidad que va a atacar
+	 */
 	public void ataque(Jugador jg, int atacante) {
 		
 		if(lista_viper.size() > atacante){
@@ -147,7 +176,11 @@ public class Jugador {
 		
 	}
 
-//	Comprueba que haya naves de cada tipo.
+	/**
+	 * Comprueba que haya naves de cada tipo, en caso contrario lo elimina
+	 * 
+	 * @author Alejandro
+	 */
 	private void revisa_naves_operativas() {
 		
 		if(lista_viper.size() == 0)
@@ -158,7 +191,11 @@ public class Jugador {
 			tipo_nave_operativa.remove("linea");
 	}
 	
-//	Añade los tipos de nave que hay operativos.
+	/**
+	 * Añade los tipos de nave que hay operativos. 
+	 * 
+	 * @author Alejandro
+	 */
 	private void añade_naves_operativas() {
 		
 		tipo_nave_operativa.clear();

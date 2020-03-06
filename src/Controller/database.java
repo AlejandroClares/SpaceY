@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class database
+ * Genera la base de datos de la aplicacion.
+ * 
  */
 @WebServlet("/database")
 public class database extends HttpServlet {
@@ -29,17 +30,9 @@ public class database extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		
-		
-	}
-
-	/**
+	 * Crea la base de datos y todas sus tablas. Si ya existe la base de 
+	 * datos, será eliminada.
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

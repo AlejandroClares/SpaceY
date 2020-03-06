@@ -8,11 +8,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Contiene metodos para hacer consultas a la tabla Partida.
+ * 
+ * @author Alejandro
+ */
 public class Partidadb extends Conexiondb {
 
 	private Connection conexion;
 	private Statement st;
 	
+	/**
+	 * Asigna los parámetros de la conexion a las variables privadas
+	 * 
+	 * @author Alejandro
+	 */
 	public Partidadb() {
 		this.conexion = super.conexion;
 		this.st = super.st;
@@ -21,6 +31,16 @@ public class Partidadb extends Conexiondb {
 	/**
 	 * Inserta una fila en la base de datos
 	 * 
+	 * <pre>
+	 * 		Partidadb db = new Partidadb();
+	 * 		int identificador = insertar("Alejandro", "Pedro", 06/03/2020 17:09:00);
+	 * </pre>
+	 * 
+	 * @author Alejandro
+	 * @param vencedor Nombre del jugador que gana la partida.
+	 * @param derrotado Nombre del jugador que pierde la partida.
+	 * @param fecha Fecha y hora en la que se jugo la partida.
+	 * @return Devuelve el id de la fila insertada.
 	 * */
 	public int insertar(String vencedor, String derrotado, String fecha) {
 		
@@ -54,6 +74,14 @@ public class Partidadb extends Conexiondb {
 	/**
 	 * Devuelve una lista de todas las partidas
 	 * 
+	 *	<pre>
+	 * 		Partidadb db = new Partidadb();
+	 * 		ArrayList&lt;PartidaData&gt; datos = obtenerTodo();
+	 * </pre>
+	 * 
+	 * @author Alejandro
+	 * @return Devuelve un arraylist de objetos PartidaData con la informacion de las partidas
+	 * @see Modelo.PartidaData
 	 * */
 	public ArrayList<PartidaData> obtenerTodo(){
 		
@@ -75,6 +103,20 @@ public class Partidadb extends Conexiondb {
 		return datos;
 	}
 	
+	
+	/**
+	 * Devuelve los datos de una partida
+	 * 
+	 * <pre>
+	 * 		Partidadb db = new Partidadb();
+	 * 		PartidaData data = obtenerFila(7);
+	 * </pre>
+	 * 
+	 * @author Alejandro
+	 * @param id Identificador de la partida
+	 * @return Objeto PartidaData con la informacion de la partida.
+	 * @see Modelo.PartidaData
+	 */
 	public PartidaData obtenerFila(String id) {
 		
 		ArrayList datos = new ArrayList();
